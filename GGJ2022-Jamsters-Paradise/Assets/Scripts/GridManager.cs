@@ -7,7 +7,10 @@ public class GridManager : MonoBehaviour {
     [SerializeField]
     private GameObject cell;
 
-    private GameObject[,] grid;
+    [SerializeField]
+    private Transform cellHolder;
+
+    public GameObject[,] grid;
 
     private int width, height;
     private int cellWidth = 1;
@@ -16,8 +19,10 @@ public class GridManager : MonoBehaviour {
     void Start() {
         width = 10;
         height = 10;
+        grid = new GameObject[width, height];
 
         InitialiseBoard(width, height);
+        GetComponent<PlayerManager>().Setup();
     }
 
     private void InitialiseBoard(int width, int height) {
@@ -26,12 +31,19 @@ public class GridManager : MonoBehaviour {
             for (int y = 0; y < height; y += cellWidth) {
 
                 GameObject go = Instantiate(cell, new Vector3(x, 0, y), Quaternion.identity);
+                grid[x, y] = go;
                 go.name = "cell_" + x + "_" + y;
+                go.transform.parent = cellHolder;
             }
         }
     }
+
     // Update is called once per frame
     void Update() {
         
+    }
+
+    public GameObject GetCell(int x, int y) {
+        return grid[x, y];
     }
 }

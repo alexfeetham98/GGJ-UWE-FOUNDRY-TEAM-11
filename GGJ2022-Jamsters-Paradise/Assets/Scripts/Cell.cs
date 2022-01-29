@@ -7,7 +7,8 @@ public class Cell : MonoBehaviour {
     [SerializeField]
     private GridManager gridManager;
 
-    public GameObject improvement;
+    private GameObject improvement;
+
     
     // Start is called before the first frame update
     void Start() {
@@ -17,5 +18,9 @@ public class Cell : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         
+    }
+
+    public void SetImprovement(GameObject improvement) {
+        this.improvement = improvement;
     }
 }

@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"m_AlwaysRefresh":false,"showFog":true,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true,"showVisualEffectGraphs":true,"m_FxEnabled":true},"in2DMode":false,"pivot":{"x":1.9045802354812623,"y":5.135072708129883,"z":7.552896499633789},"rotation":{"x":0.10663814097642899,"y":0.8171239495277405,"z":-0.5433425903320313,"w":0.16037236154079438},"size":5.066025733947754,"orthographic":false}
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"m_AlwaysRefresh":false,"showFog":true,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true,"showVisualEffectGraphs":true,"m_FxEnabled":true},"in2DMode":false,"pivot":{"x":1.7698965072631837,"y":-14.295591354370118,"z":-4.172656536102295},"rotation":{"x":0.6661511659622192,"y":0.1275140643119812,"z":-0.1170913502573967,"w":0.7254544496536255},"size":13.35240650177002,"orthographic":false}
+>>>>>>> Sam'sBranch
