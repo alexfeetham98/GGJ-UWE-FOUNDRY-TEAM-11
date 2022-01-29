@@ -24,6 +24,10 @@ public class PlayerController : MonoBehaviour {
             HandleMovement();
         }
 
+        if (Input.GetButtonDown("Space")) {
+            PlaceObject();
+        }
+
     }
 
     public void HandleMovement() {
@@ -54,6 +58,10 @@ public class PlayerController : MonoBehaviour {
 
         gameObject.transform.position += movement;
 
+
+    }
+
+    public void PlaceObject() {
 
     }
 }
