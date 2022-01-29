@@ -15,9 +15,9 @@ MonoBehaviour:
   m_PixelRect:
     serializedVersion: 2
     x: 0
-    y: 42.666668
-    width: 1280
-    height: 637.3334
+    y: 42
+    width: 1536
+    height: 782
   m_ShowMode: 4
   m_Title: Scene
   m_RootView: {fileID: 7}
@@ -199,7 +199,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1280
+    width: 1536
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -223,8 +223,8 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 617
-    width: 1280
+    y: 762
+    width: 1536
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -351,7 +351,7 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Prefabs
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\sfors\Documents\Github Repos\GGJ-UWE-FOUNDRY-TEAM-11\GGJ2022-Jamsters-Paradise
+  m_LastProjectPath: D:\Unity Projects\GGJ-UWE-FOUNDRY-TEAM-11\GGJ2022-Jamsters-Paradise
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
@@ -474,7 +474,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 172.79999
   m_GlobalObjectId: 
   m_LockTracker:
     m_IsLocked: 0
