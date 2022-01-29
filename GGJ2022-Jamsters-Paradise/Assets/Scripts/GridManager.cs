@@ -21,8 +21,8 @@ public class GridManager : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        width = 10;
-        height = 10;
+        width = 15;
+        height = 15;
         grid = new GameObject[width, height];
 
         InitialiseBoard(width, height);

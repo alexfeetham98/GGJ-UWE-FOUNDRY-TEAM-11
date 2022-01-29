@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 507324262}
   - component: {fileID: 507324266}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player_Temp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -451,6 +451,7 @@ GameObject:
   - component: {fileID: 1690991914}
   - component: {fileID: 1690991913}
   - component: {fileID: 1690991915}
+  - component: {fileID: 1690991916}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -501,9 +502,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 507324261}
-  buildings:
-  - {fileID: 919132149155446097, guid: 0605e750ec492ce4195f8eba3cc9ca63, type: 3}
   playerLocationX: 0
   playerLocationZ: 0
   lastInput: 0
   lookingAt: {fileID: 0}
+--- !u!114 &1690991916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690991912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4edfd7a74d0f7548820856af2b55ed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildings:
+  - {fileID: 919132149155446097, guid: 0605e750ec492ce4195f8eba3cc9ca63, type: 3}

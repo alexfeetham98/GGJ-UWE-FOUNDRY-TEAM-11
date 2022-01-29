@@ -8,9 +8,7 @@ public class PlayerManager : MonoBehaviour {
 
 
     [SerializeField]
-    private GameObject player;  //Reference to player 
-    [SerializeField]
-    List<GameObject> buildings = new List<GameObject>();
+    private GameObject player;  //Reference to player
 
     
 
@@ -22,7 +20,6 @@ public class PlayerManager : MonoBehaviour {
     public GameObject lookingAt; // Cell the player is looking at
     
     
-    private GameObject currentlyHolding;
 
     private GridManager gm;
     private bool gmCheck;
@@ -37,15 +34,14 @@ public class PlayerManager : MonoBehaviour {
 
 
         lookingAt = gm.GetCell(1, 1);
-        currentlyHolding = buildings[0];
     }
 
     // Update is called once per frame
     void Update() {
 
         if (gmCheck) {
-            playerLocationX = Mathf.FloorToInt(player.transform.position.x);
-            playerLocationZ = Mathf.FloorToInt(player.transform.position.z);
+            playerLocationX = Mathf.RoundToInt(player.transform.position.x);
+            playerLocationZ = Mathf.RoundToInt(player.transform.position.z);
 
             try {
 
@@ -88,7 +84,7 @@ public class PlayerManager : MonoBehaviour {
         posToPlace.y += 0.5f;  //Hardcoded Value
 
         if (!lookingAt.GetComponent<Cell>().CheckForImprovement()) {
-            GameObject go = Instantiate(currentlyHolding, posToPlace, Quaternion.identity);
+            GameObject go = Instantiate(BuildingManager.currentlySelected, posToPlace, Quaternion.identity);
             lookingAt.GetComponent<Cell>().SetImprovement(go);
         }
 
