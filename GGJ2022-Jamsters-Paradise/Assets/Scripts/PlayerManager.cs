@@ -113,7 +113,7 @@ public class PlayerManager : MonoBehaviour {
         Vector3 posToPlace = lookingAt.transform.position;
         posToPlace.y += 0.5f;  //Hardcoded Value
 
-        if (!lookingAt.GetComponent<Cell>().CheckForImprovement()) {
+        if (!lookingAt.GetComponent<Cell>().CheckForImprovement() && !lookingAt.GetComponent<Cell>().isPath) {
             GameObject go = Instantiate(BuildingManager.currentlySelected, posToPlace, Quaternion.identity);
             lookingAt.GetComponent<Cell>().SetImprovement(go);
         }

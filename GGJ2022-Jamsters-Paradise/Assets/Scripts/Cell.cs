@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Cell : MonoBehaviour {
 
+    public bool isPath;
+
     [SerializeField]
     private GridManager gridManager;
 
@@ -12,7 +14,7 @@ public class Cell : MonoBehaviour {
     
     // Start is called before the first frame update
     void Start() {
-        
+
     }
 
     // Update is called once per frame
