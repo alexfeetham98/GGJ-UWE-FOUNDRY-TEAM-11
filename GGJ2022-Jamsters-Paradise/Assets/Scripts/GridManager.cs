@@ -21,8 +21,8 @@ public class GridManager : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        width = 15;
-        height = 15;
+        width = 25;
+        height = 25;
         grid = new GameObject[width, height];
 
         InitialiseBoard(width, height);
@@ -42,18 +42,10 @@ public class GridManager : MonoBehaviour {
         }
     }
 
-    // Update is called once per frame
-    void Update() {
+    public void UpdateCellColours(GameObject previous, GameObject current) {
 
-        foreach (GameObject cell in grid) {
-            if (cell == GetComponent<PlayerManager>().lookingAt) {
-                cell.GetComponent<MeshRenderer>().material = matRed;
-
-            } else {
-                cell.GetComponent<MeshRenderer>().material = matWhite;
-            }
-        }
-
+        previous.GetComponent<MeshRenderer>().material = matWhite;
+        current.GetComponent<MeshRenderer>().material = matRed;
 
     }
 

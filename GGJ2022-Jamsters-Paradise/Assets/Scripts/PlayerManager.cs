@@ -18,6 +18,7 @@ public class PlayerManager : MonoBehaviour {
 
     public Direction lastInput = Direction.Up; // Player's Last Movement direction
     public GameObject lookingAt; // Cell the player is looking at
+    public GameObject lastLookedAt;
     
     
 
@@ -33,13 +34,21 @@ public class PlayerManager : MonoBehaviour {
         gmCheck = true;
 
 
-        lookingAt = gm.GetCell(1, 1);
+        lookingAt = gm.GetCell(0, 0);
     }
 
     // Update is called once per frame
     void Update() {
+        UpdateCellLookingAt();
+        
+    }
 
+    public void UpdateCellLookingAt() {
+        
+        
+        
         if (gmCheck) {
+
             playerLocationX = Mathf.RoundToInt(player.transform.position.x);
             playerLocationZ = Mathf.RoundToInt(player.transform.position.z);
 
@@ -47,23 +56,35 @@ public class PlayerManager : MonoBehaviour {
 
                 switch (lastInput) {
                     case Direction.Up:
-                        lookingAt = gm.GetCell(playerLocationX, playerLocationZ + 1);
+
+                        if (gm.GetCell(playerLocationX, playerLocationZ + 1) != lookingAt) {
+                            UpdateVariablesForLooking(playerLocationX, playerLocationZ + 1);
+                        }
+
                         break;
 
                     case Direction.Down:
-                        lookingAt = gm.GetCell(playerLocationX, playerLocationZ - 1);
+
+                        if (gm.GetCell(playerLocationX, playerLocationZ - 1) != lookingAt) {
+                            UpdateVariablesForLooking(playerLocationX, playerLocationZ - 1);
+                        }
+
                         break;
 
                     case Direction.Left:
-                        lookingAt = gm.GetCell(playerLocationX - 1, playerLocationZ);
+
+                        if (gm.GetCell(playerLocationX - 1, playerLocationZ) != lookingAt) {
+                            UpdateVariablesForLooking(playerLocationX - 1, playerLocationZ);
+                        }
+
                         break;
 
                     case Direction.Right:
-                        lookingAt = gm.GetCell(playerLocationX + 1, playerLocationZ);
-                        break;
 
-                    default:
-                        lookingAt = gm.GetCell(playerLocationX, playerLocationZ);
+                        if (gm.GetCell(playerLocationX + 1, playerLocationZ) != lookingAt) {
+                            UpdateVariablesForLooking(playerLocationX + 1, playerLocationZ);
+                        }
+
                         break;
 
                 }
@@ -72,10 +93,19 @@ public class PlayerManager : MonoBehaviour {
                 lookingAt = gm.GetCell(playerLocationX, playerLocationZ);
 
             }
-            
-            
+
+
 
         }
+    }
+
+    public void UpdateVariablesForLooking(int x, int y) {
+        lastLookedAt = lookingAt;
+        lookingAt = gm.GetCell(x, y);
+
+        gm.UpdateCellColours(lastLookedAt, lookingAt);
+
+
     }
 
     public void PlaceCurrentObject() {
