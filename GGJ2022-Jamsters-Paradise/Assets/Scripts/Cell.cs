@@ -23,4 +23,8 @@ public class Cell : MonoBehaviour {
     public void SetImprovement(GameObject improvement) {
         this.improvement = improvement;
     }
+
+    public bool CheckForImprovement() {
+        return improvement != null; //Returns true if there is an improvement on this cell
+    }
 }

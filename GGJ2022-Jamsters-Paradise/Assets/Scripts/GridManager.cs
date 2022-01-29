@@ -14,7 +14,11 @@ public class GridManager : MonoBehaviour {
 
     private int width, height;
     private int cellWidth = 1;
+
     
+    public Material matRed;
+    public Material matWhite;
+
     // Start is called before the first frame update
     void Start() {
         width = 10;
@@ -40,7 +44,17 @@ public class GridManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        
+
+        foreach (GameObject cell in grid) {
+            if (cell == GetComponent<PlayerManager>().lookingAt) {
+                cell.GetComponent<MeshRenderer>().material = matRed;
+
+            } else {
+                cell.GetComponent<MeshRenderer>().material = matWhite;
+            }
+        }
+
+
     }
 
     public GameObject GetCell(int x, int y) {

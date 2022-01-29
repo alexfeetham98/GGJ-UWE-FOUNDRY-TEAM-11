@@ -12,11 +12,16 @@ public class PlayerManager : MonoBehaviour {
     [SerializeField]
     List<GameObject> buildings = new List<GameObject>();
 
+    
+
 
     public int playerLocationX; //Player's X location on the board
     public int playerLocationZ; // Player's Y location on the board
+
     public Direction lastInput = Direction.Up; // Player's Last Movement direction
     public GameObject lookingAt; // Cell the player is looking at
+    
+    
     private GameObject currentlyHolding;
 
     private GridManager gm;
@@ -71,8 +76,7 @@ public class PlayerManager : MonoBehaviour {
                 lookingAt = gm.GetCell(playerLocationX, playerLocationZ);
 
             }
-
-
+            
             
 
         }
@@ -83,8 +87,12 @@ public class PlayerManager : MonoBehaviour {
         Vector3 posToPlace = lookingAt.transform.position;
         posToPlace.y += 0.5f;  //Hardcoded Value
 
-        GameObject go = Instantiate(currentlyHolding, posToPlace, Quaternion.identity);
-        lookingAt.GetComponent<Cell>().SetImprovement(go);
+        if (!lookingAt.GetComponent<Cell>().CheckForImprovement()) {
+            GameObject go = Instantiate(currentlyHolding, posToPlace, Quaternion.identity);
+            lookingAt.GetComponent<Cell>().SetImprovement(go);
+        }
+
+        
     }
 
         

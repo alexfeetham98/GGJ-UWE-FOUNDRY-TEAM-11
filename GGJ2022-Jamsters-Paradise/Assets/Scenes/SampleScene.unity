@@ -472,6 +472,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cell: {fileID: 1665221037497159888, guid: fb00c06c93b3ca244b3429cf755d6c71, type: 3}
   cellHolder: {fileID: 104206786}
+  matRed: {fileID: 2100000, guid: 7e78ad467dcc3c443a51e14213877af4, type: 2}
+  matWhite: {fileID: 2100000, guid: 4028379baa355d34d9d2977db0c0fca4, type: 2}
 --- !u!4 &1690991914
 Transform:
   m_ObjectHideFlags: 0
