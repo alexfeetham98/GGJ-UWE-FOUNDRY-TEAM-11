@@ -40,7 +40,49 @@ public class Turret : Building
             nextTimeToFire = Time.time + 1f / fireRate;
             Attack();
         }
+
+        //Actions like pointing turret if it has to point at specific target
+        if (isSingleTarget)
+        {
+            if (currentTarget != null)
+            {
+            }
+        }
+        //upadate events for turrets that just apply AOE/ don't have to change orientation based on target
+        else
+        {
+
+        }
+
+
+        SetCurrentTarget();
         base.Update();
+    }
+
+
+
+    private void SetCurrentTarget()
+    {
+        if (targetList.Count == 0)
+        {
+            return;
+        }
+    }
+
+    private void Attack()
+    {
+
+        if (isSingleTarget)
+        {
+            currentTarget.TakeDamage(damage);
+        }
+        else
+        {
+            foreach (var target in targetList)
+            {
+                target.TakeDamage(damage);
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -50,22 +92,15 @@ public class Turret : Building
             targetList.Add(other.GetComponent<Enemy>());
         }
     }
-
-    private void SetCurrentTarget()
+    private void OnTriggerExit(Collider other)
     {
-
-    }
-
-    private void Attack()
-    {
-
-        if (isSingleTarget)
+        if (other.CompareTag("Enemy"))
         {
-
-        }
-        else
-        {
-
+            Enemy enemy = other.GetComponent<Enemy>();
+            if (targetList.Contains(enemy))
+            {
+                targetList.Remove(enemy);
+            }
         }
     }
 }
