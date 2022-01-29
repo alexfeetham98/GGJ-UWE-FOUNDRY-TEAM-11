@@ -8,6 +8,7 @@ public class Cell : MonoBehaviour {
     private GridManager gridManager;
 
     public GameObject improvement;
+
     
     // Start is called before the first frame update
     void Start() {
