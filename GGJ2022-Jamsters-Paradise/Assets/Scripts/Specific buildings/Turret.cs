@@ -17,8 +17,11 @@ public class Turret : Building
 
     private List<Enemy> targetList = new List<Enemy>();
     private Transform Target;
-    private Enemy currentTarget = null;
+    public Enemy currentTarget = null;
     private float nextTimeToFire = 0f;
+    private Quaternion lookRotation;
+    private Vector3 direction;
+    private SphereCollider rangeCollider;
 
     [SerializeField] private float Range = 1f;
     [SerializeField] private float fireRate = 1f;
@@ -29,23 +32,26 @@ public class Turret : Building
     // Start is called before the first frame update
     void Start()
     {
-
+        base.Start();
+        rangeCollider = GetComponent<SphereCollider>();
+        rangeCollider.radius = Range;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (targetList.Count > 0 && Time.time >= nextTimeToFire)
+        if (!isActive)
         {
-            nextTimeToFire = Time.time + 1f / fireRate;
-            Attack();
+            return;
         }
-
         //Actions like pointing turret if it has to point at specific target
         if (isSingleTarget)
         {
             if (currentTarget != null)
             {
+                direction = (currentTarget.transform.position - buildingHead.transform.position).normalized;
+                lookRotation = Quaternion.LookRotation(direction);
+                 buildingHead.transform.rotation = lookRotation;
             }
         }
         //upadate events for turrets that just apply AOE/ don't have to change orientation based on target
@@ -56,6 +62,12 @@ public class Turret : Building
 
 
         SetCurrentTarget();
+
+        if (targetList.Count > 0 && Time.time >= nextTimeToFire)
+        {
+            nextTimeToFire = Time.time + 1f / fireRate;
+            Attack();
+        }
         base.Update();
     }
 
@@ -63,9 +75,53 @@ public class Turret : Building
 
     private void SetCurrentTarget()
     {
+        float distance;
         if (targetList.Count == 0)
         {
             return;
+        }
+
+        switch (targeting)
+        {
+            case TargetingType.NULL:
+                break;
+            case TargetingType.CLOSEST:
+                {
+                    float closestDistance = float.MaxValue;
+                    foreach (var target in targetList)
+                    {
+                        distance = Vector3.Distance(transform.position, target.transform.position);
+                        if (distance < closestDistance)
+                        {
+                            closestDistance = distance;
+                            currentTarget = target;
+                        }
+                    }
+                }
+                break;
+            case TargetingType.FURTHEST:
+                {
+                    float furthestDistance = float.MinValue;
+                    foreach (var target in targetList)
+                    {
+                        distance = Vector3.Distance(transform.position, target.transform.position);
+                        if (distance > furthestDistance)
+                        {
+                            furthestDistance = distance;
+                            currentTarget = target;
+                        }
+                    }
+                }
+
+                break;
+            case TargetingType.CLOSEST_TO_END:
+                {
+
+                }
+
+                break;
+            default:
+                break;
         }
     }
 
@@ -100,6 +156,10 @@ public class Turret : Building
             if (targetList.Contains(enemy))
             {
                 targetList.Remove(enemy);
+            }
+            if (currentTarget == enemy)
+            {
+                currentTarget = null;
             }
         }
     }
