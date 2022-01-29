@@ -10,6 +10,10 @@ public class GridManager : MonoBehaviour {
     [SerializeField]
     private Transform cellHolder;
 
+    [SerializeField]
+    private GameObject enemy;
+
+
     public GameObject[,] grid;
 
     private int width, height;
@@ -52,6 +56,7 @@ public class GridManager : MonoBehaviour {
                 if (path1.Contains(pos) || path2.Contains(pos)) {
                     go.GetComponent<Cell>().isPath = true;
                     go.GetComponent<MeshRenderer>().material = matPath;
+
                 } else {
                     go.GetComponent<Cell>().isPath = false;
                     go.GetComponent<MeshRenderer>().material = matWhite;
@@ -60,6 +65,13 @@ public class GridManager : MonoBehaviour {
 
             }
         }
+
+        // SPAWNS enemy at start of game - likely to change
+
+        GameObject go_Enemy = Instantiate(enemy, new Vector3(path2[0].x, 1f, path2[0].y), Quaternion.identity);
+        go_Enemy.GetComponent<EnemyMovement>().path = path2;
+        go_Enemy.GetComponent<EnemyMovement>().Setup();
+
     }
 
     public void UpdateCellColours(GameObject previous, GameObject current) {
