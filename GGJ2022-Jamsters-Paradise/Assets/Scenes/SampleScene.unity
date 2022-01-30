@@ -451,6 +451,7 @@ MonoBehaviour:
   cellHolder: {fileID: 104206786}
   battery: {fileID: 2406311287599195025, guid: a929d491d287ae04ea7b999eebe41f99, type: 3}
   enemySpawner: {fileID: 6917565104339941458, guid: 6bf112b69a31b8d448b67137dd6fcc79, type: 3}
+  solarPanel: {fileID: 7114356404000388038, guid: 6c93cce861192f749873c21b0d7a34c3, type: 3}
   matRed: {fileID: 2100000, guid: 7e78ad467dcc3c443a51e14213877af4, type: 2}
   matWhite: {fileID: 2100000, guid: 4028379baa355d34d9d2977db0c0fca4, type: 2}
   matPath: {fileID: 2100000, guid: c7e0672d7ca89664ebb5ae0f1281129d, type: 2}
@@ -483,6 +484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1139536486}
+  isHolding: 0
   playerLocationX: 0
   playerLocationZ: 0
   lastInput: 0

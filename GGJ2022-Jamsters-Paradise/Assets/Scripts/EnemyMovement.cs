@@ -46,8 +46,8 @@ public class EnemyMovement : MonoBehaviour {
         Vector3 targetPos = nextCell.transform.position;
 
         currentPos.y = 0.5f;
-        previousPos.y = 1f;
-        targetPos.y = 1f;
+        previousPos.y = 0.5f;
+        targetPos.y = 0.5f;
 
         gameObject.transform.position += (targetPos - previousPos) * speedModifier * Time.deltaTime;
 

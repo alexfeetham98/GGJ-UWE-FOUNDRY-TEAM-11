@@ -7,6 +7,8 @@ TagManager:
   - Building
   - Enemy
   - Plug
+  - Building
+  - Socket
   layers:
   - Default
   - TransparentFX

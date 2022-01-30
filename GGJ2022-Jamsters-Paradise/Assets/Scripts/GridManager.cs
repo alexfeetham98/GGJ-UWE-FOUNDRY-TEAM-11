@@ -10,12 +10,14 @@ public class GridManager : MonoBehaviour {
     [SerializeField]
     private Transform cellHolder;
 
-
     [SerializeField]
     private GameObject battery;
 
     [SerializeField]
     private GameObject enemySpawner;
+
+    [SerializeField]
+    private GameObject solarPanel;
 
     public GameObject[,] grid;
 
@@ -70,8 +72,8 @@ public class GridManager : MonoBehaviour {
         }
 
         // Spawning the batteries at the end of the path
-        GameObject go_battery = Instantiate(battery, new Vector3(path1[path1.Count - 1].x, 1f, path1[path1.Count - 1].y), Quaternion.identity);
-        go_battery = Instantiate(battery, new Vector3(path2[path2.Count - 1].x, 1f, path2[path2.Count - 1].y), Quaternion.identity);
+        GameObject go_battery = Instantiate(battery, new Vector3(path1[path1.Count - 1].x, 0.5f, path1[path1.Count - 1].y), Quaternion.identity);
+        go_battery = Instantiate(battery, new Vector3(path2[path2.Count - 1].x, 0.5f, path2[path2.Count - 1].y), Quaternion.identity);
 
         // Setting the enemy spawners
         GameObject go_EnemySpawner = Instantiate(enemySpawner, new Vector3(path1[0].x, 1f, path1[0].y), Quaternion.identity);
@@ -81,15 +83,12 @@ public class GridManager : MonoBehaviour {
         go_EnemySpawner.GetComponent<EnemySpawner>().Setup(path2);
 
 
+        // Setting up initial solar panel - HARDCODED VALUE
 
-        /*
+        GameObject go_SolarPanel = Instantiate(solarPanel, new Vector3(15, 0.5f, 5), Quaternion.identity);
+        GetCell(15, 5).GetComponent<Cell>().SetImprovement(solarPanel);
 
-        // SPAWNS enemy at start of game - likely to change
-
-        GameObject go_Enemy = Instantiate(enemy, new Vector3(path2[0].x, 1f, path2[0].y), Quaternion.identity);
-        go_Enemy.GetComponent<EnemyMovement>().path = path2;
-        go_Enemy.GetComponent<EnemyMovement>().Setup();
-        */
+        
     }
 
     public void UpdateCellColours(GameObject previous, GameObject current) {
