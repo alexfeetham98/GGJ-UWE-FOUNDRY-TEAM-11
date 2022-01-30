@@ -8,6 +8,7 @@ public class Cable : MonoBehaviour
     public List<GameObject> points;
     public List<GameObject> basePoints;
     public GameObject plugBase;
+    public bool frozen = false;
 
     private Vector3 mOffset;
     private float mZCoord;
@@ -20,6 +21,11 @@ public class Cable : MonoBehaviour
 
     private void OnMouseUp()
     {
+        if (frozen)
+        {
+            return;
+        }
+
         ResetCable();
         ResetCable();
     }
@@ -40,7 +46,7 @@ public class Cable : MonoBehaviour
         
     }
 
-    private void ResetCable()
+    public void ResetCable()
     {
         for (int i = 0; i < points.Count; i++)
         {
