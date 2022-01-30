@@ -45,7 +45,7 @@ public class EnemyMovement : MonoBehaviour {
         Vector3 previousPos = currentCell.transform.position;
         Vector3 targetPos = nextCell.transform.position;
 
-        currentPos.y = 1f;
+        currentPos.y = 0.5f;
         previousPos.y = 1f;
         targetPos.y = 1f;
 
