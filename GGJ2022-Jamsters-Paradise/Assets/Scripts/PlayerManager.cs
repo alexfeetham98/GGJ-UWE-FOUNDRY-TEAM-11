@@ -10,8 +10,8 @@ public class PlayerManager : MonoBehaviour {
     [SerializeField]
     private GameObject player;  //Reference to player
 
-    
 
+    public bool isHolding;
 
     public int playerLocationX; //Player's X location on the board
     public int playerLocationZ; // Player's Y location on the board
@@ -35,6 +35,7 @@ public class PlayerManager : MonoBehaviour {
 
 
         lookingAt = gm.GetCell(0, 0);
+        isHolding = false;
     }
 
     // Update is called once per frame
@@ -99,7 +100,7 @@ public class PlayerManager : MonoBehaviour {
         }
     }
 
-    public void UpdateVariablesForLooking(int x, int y) {
+    private void UpdateVariablesForLooking(int x, int y) {
         lastLookedAt = lookingAt;
         lookingAt = gm.GetCell(x, y);
 
@@ -112,6 +113,12 @@ public class PlayerManager : MonoBehaviour {
 
         Vector3 posToPlace = lookingAt.transform.position;
         posToPlace.y += 0.5f;  //Hardcoded Value
+
+        if (lookingAt.GetComponent<Cell>().CheckForImprovement()) {
+            lookingAt.GetComponent<Cell>().GetImprovement().GetComponent<Building>().Interact();
+        }
+
+
 
         if (!lookingAt.GetComponent<Cell>().CheckForImprovement() && !lookingAt.GetComponent<Cell>().isPath) {
             GameObject go = Instantiate(BuildingManager.currentlySelected, posToPlace, Quaternion.identity);

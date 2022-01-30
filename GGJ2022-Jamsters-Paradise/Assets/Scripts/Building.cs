@@ -23,7 +23,7 @@ public class Building : MonoBehaviour
 
     public void SwitchPower()
     {
-        isActive = (isActive = true ? false : true);
+        isActive = (isActive == true) ? false : true;
     }
 
     public virtual void Interact()

@@ -14,9 +14,12 @@ public class EnemyMovement : MonoBehaviour {
     public List<Vector2> path;
     public float speedModifier = 3f;
 
-    public void Setup() {
+    public void Setup(List<Vector2> path) {
         gm = (GridManager)FindObjectOfType(typeof(GridManager));
         gmCheck = true;
+
+        this.path = path;
+
         positionInPath = 0;
 
         currentCell = gm.GetCell((int)path[0].x, (int)path[0].y);
@@ -42,9 +45,9 @@ public class EnemyMovement : MonoBehaviour {
         Vector3 previousPos = currentCell.transform.position;
         Vector3 targetPos = nextCell.transform.position;
 
-        currentPos.y = 1f;
-        previousPos.y = 1f;
-        targetPos.y = 1f;
+        currentPos.y = 0.5f;
+        previousPos.y = 0.5f;
+        targetPos.y = 0.5f;
 
         gameObject.transform.position += (targetPos - previousPos) * speedModifier * Time.deltaTime;
 
