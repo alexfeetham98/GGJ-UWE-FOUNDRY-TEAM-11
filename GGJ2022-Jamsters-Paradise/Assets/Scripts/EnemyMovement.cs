@@ -51,6 +51,7 @@ public class EnemyMovement : MonoBehaviour {
 
         gameObject.transform.position += (targetPos - previousPos) * speedModifier * Time.deltaTime;
 
+        RotateObjectToTarget.RotateObject(gameObject, nextCell.transform.position);
 
 
         if (Vector3.Distance(currentPos, targetPos) <= 0.05f * speedModifier) {
@@ -62,6 +63,7 @@ public class EnemyMovement : MonoBehaviour {
             }
             currentCell = nextCell;
             nextCell = gm.GetCell((int)path[positionInPath].x, (int)path[positionInPath].y);
+
 
         }
 

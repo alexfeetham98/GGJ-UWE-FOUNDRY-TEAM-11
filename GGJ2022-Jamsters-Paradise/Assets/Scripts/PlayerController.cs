@@ -58,6 +58,8 @@ public class PlayerController : MonoBehaviour {
 
         gameObject.transform.position += movement;
 
+        RotateObjectToTarget.RotateObject(gameObject, pm.lookingAt.transform.position);
+
 
     }
 
