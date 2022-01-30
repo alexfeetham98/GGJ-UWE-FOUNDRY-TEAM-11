@@ -39,7 +39,7 @@ public class EnemySpawner : MonoBehaviour {
     public void SpawnEnemy() {
 
         
-        GameObject go_enemy = Instantiate(enemy, gameObject.transform.position, Quaternion.identity);
+        GameObject go_enemy = Instantiate(enemy, new Vector3(transform.position.x, 0.5f, transform.position.z), Quaternion.identity);
         go_enemy.GetComponent<EnemyMovement>().Setup(path);
 
         

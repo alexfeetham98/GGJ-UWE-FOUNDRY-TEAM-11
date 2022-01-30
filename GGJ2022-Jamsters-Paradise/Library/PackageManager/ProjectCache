@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637791471253936082
+      ticks: 637791488975140287
     m_Hash: 557908166
   m_LockFileStatus:
     m_FilePath: C:/Users/sfors/Documents/Github Repos/GGJ-UWE-FOUNDRY-TEAM-11/GGJ2022-Jamsters-Paradise/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637791471254444744
+      ticks: 637791488975140287
     m_Hash: 2111142144
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -25,7 +25,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 2.6.11
       source: 1
-      resolvedPath: D:\Unity Projects\GGJ-UWE-FOUNDRY-TEAM-11\GGJ2022-Jamsters-Paradise\Library\PackageCache\com.unity.cinemachine@2.6.11
+      resolvedPath: C:\Users\sfors\Documents\Github Repos\GGJ-UWE-FOUNDRY-TEAM-11\GGJ2022-Jamsters-Paradise\Library\PackageCache\com.unity.cinemachine@2.6.11
       assetPath: Packages/com.unity.cinemachine
       name: com.unity.cinemachine
       displayName: Cinemachine
@@ -87,17 +87,10 @@ m_PackageAssets:
         - 2.7.4
         - 2.7.5
         - 2.7.8
-        - 2.7.9
         - 2.8.0-exp.1
         - 2.8.0-exp.2
         - 2.8.0-pre.1
         - 2.8.0
-        - 2.8.1
-        - 2.8.2
-        - 2.8.3
-        - 2.8.4
-        - 2.9.0-pre.1
-        - 2.9.0-pre.6
         compatible:
         - 2.5.0
         - 2.6.0-preview.2
@@ -122,17 +115,10 @@ m_PackageAssets:
         - 2.7.4
         - 2.7.5
         - 2.7.8
-        - 2.7.9
         - 2.8.0-exp.1
         - 2.8.0-exp.2
         - 2.8.0-pre.1
         - 2.8.0
-        - 2.8.1
-        - 2.8.2
-        - 2.8.3
-        - 2.8.4
-        - 2.9.0-pre.1
-        - 2.9.0-pre.6
         verified: 2.6.11
       dependencies: []
       resolvedDependencies: []
@@ -171,7 +157,7 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637715450880000000
+      datePublishedTicks: 0
       documentationUrl: 
       hasRepository: 1
       repository:
@@ -229,16 +215,7 @@ m_PackageAssets:
         - 1.11.2
         - 1.12.5
         - 1.13.5
-        - 1.14.1
-        - 1.14.4
-        - 1.14.7
-        - 1.14.9
-        - 1.14.12
-        - 1.15.1
-        - 1.15.4
         - 1.15.7
-        - 1.15.9
-        - 1.15.12
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -251,8 +228,6 @@ m_PackageAssets:
         - 2.1.0-preview.6
         compatible:
         - 1.15.7
-        - 1.15.9
-        - 1.15.12
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -263,7 +238,7 @@ m_PackageAssets:
         - 2.1.0-preview.3
         - 2.1.0-preview.5
         - 2.1.0-preview.6
-        verified: 1.15.12
+        verified: 1.15.7
       dependencies:
       - name: com.unity.nuget.newtonsoft-json
         version: 2.0.0
@@ -357,9 +332,6 @@ m_PackageAssets:
         - 3.0.5
         - 3.0.6
         - 3.0.7
-        - 3.0.9
-        - 3.0.10
-        - 3.0.12
         compatible:
         - 1.0.2
         - 1.0.6
@@ -386,9 +358,6 @@ m_PackageAssets:
         - 3.0.5
         - 3.0.6
         - 3.0.7
-        - 3.0.9
-        - 3.0.10
-        - 3.0.12
         verified: 2.0.7
       dependencies:
       - name: com.unity.test-framework
@@ -1041,10 +1010,6 @@ m_PackageAssets:
         - 1.6.0-pre.5
         - 1.6.1
         - 1.6.2
-        - 1.6.3
-        - 1.6.4
-        - 1.7.0-pre.1
-        - 1.7.0-pre.2
         compatible:
         - 1.4.8
         - 1.5.0-pre.2
@@ -1066,10 +1031,6 @@ m_PackageAssets:
         - 1.6.0-pre.5
         - 1.6.1
         - 1.6.2
-        - 1.6.3
-        - 1.6.4
-        - 1.7.0-pre.1
-        - 1.7.0-pre.2
         verified: 1.4.8
       dependencies:
       - name: com.unity.modules.director
@@ -2942,10 +2903,8 @@ m_PackageAssets:
       versions:
         all:
         - 1.0.6
-        - 2.0.2
         compatible:
         - 1.0.6
-        - 2.0.2
         verified: 1.0.6
       dependencies: []
       resolvedDependencies: []
@@ -3145,7 +3104,6 @@ m_PackageAssets:
         - 10.5.1
         - 10.6.0
         - 10.7.0
-        - 10.8.0
         - 10.8.1
         compatible:
         - 10.8.1
@@ -3181,7 +3139,7 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637756824220000000
+      datePublishedTicks: 0
       documentationUrl: 
       hasRepository: 1
       repository:
@@ -3305,7 +3263,6 @@ m_PackageAssets:
         - 10.5.1
         - 10.6.0
         - 10.7.0
-        - 10.8.0
         - 10.8.1
         compatible:
         - 10.8.1
@@ -3343,7 +3300,7 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637756824360000000
+      datePublishedTicks: 0
       documentationUrl: 
       hasRepository: 1
       repository:
@@ -3432,20 +3389,8 @@ m_PackageAssets:
       versions:
         all:
         - 1.0.1
-        - 1.1.0-pre.7
-        - 1.1.0-pre.8
-        - 1.1.0-pre.9
-        - 1.1.0-pre.10
-        - 1.1.0-pre.11
-        - 1.1.0-pre.41
         compatible:
         - 1.0.1
-        - 1.1.0-pre.7
-        - 1.1.0-pre.8
-        - 1.1.0-pre.9
-        - 1.1.0-pre.10
-        - 1.1.0-pre.11
-        - 1.1.0-pre.41
         verified: 1.0.1
       dependencies:
       - name: com.unity.modules.unitywebrequest
@@ -3466,7 +3411,7 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637604883250000000
+      datePublishedTicks: 0
       documentationUrl: 
       hasRepository: 1
       repository:
