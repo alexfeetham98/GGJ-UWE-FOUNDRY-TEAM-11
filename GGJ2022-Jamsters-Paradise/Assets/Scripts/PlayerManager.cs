@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour {
+public class PlayerManager : MonoBehaviour
+{
 
-    public enum Direction { Up, Down, Left, Right}
+    public enum Direction { Up, Down, Left, Right }
 
 
     [SerializeField]
@@ -21,8 +22,8 @@ public class PlayerManager : MonoBehaviour {
     public Direction lastInput = Direction.Up; // Player's Last Movement direction
     public GameObject lookingAt; // Cell the player is looking at
     public GameObject lastLookedAt;
-    
-    
+
+
 
     private GridManager gm;
     private bool gmCheck;
@@ -30,11 +31,12 @@ public class PlayerManager : MonoBehaviour {
     private BuildingManager bm;
     private bool bmCheck;
 
-    
 
-    
+
+
     //Setting up variables (called from the GridManager)
-    public void Setup() {
+    public void Setup()
+    {
         gm = (GridManager)FindObjectOfType(typeof(GridManager));
         gmCheck = true;
 
@@ -46,26 +48,32 @@ public class PlayerManager : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update()
+    {
         UpdateCellLookingAt();
-        
+
     }
 
-    public void UpdateCellLookingAt() {
-        
-        
-        
-        if (gmCheck) {
+    public void UpdateCellLookingAt()
+    {
+
+
+
+        if (gmCheck)
+        {
 
             playerLocationX = Mathf.RoundToInt(player.transform.position.x);
             playerLocationZ = Mathf.RoundToInt(player.transform.position.z);
 
-            try {
+            try
+            {
 
-                switch (lastInput) {
+                switch (lastInput)
+                {
                     case Direction.Up:
 
-                        if (gm.GetCell(playerLocationX, playerLocationZ + 1) != lookingAt) {
+                        if (gm.GetCell(playerLocationX, playerLocationZ + 1) != lookingAt)
+                        {
                             UpdateVariablesForLooking(playerLocationX, playerLocationZ + 1);
                         }
 
@@ -73,7 +81,8 @@ public class PlayerManager : MonoBehaviour {
 
                     case Direction.Down:
 
-                        if (gm.GetCell(playerLocationX, playerLocationZ - 1) != lookingAt) {
+                        if (gm.GetCell(playerLocationX, playerLocationZ - 1) != lookingAt)
+                        {
                             UpdateVariablesForLooking(playerLocationX, playerLocationZ - 1);
                         }
 
@@ -81,7 +90,8 @@ public class PlayerManager : MonoBehaviour {
 
                     case Direction.Left:
 
-                        if (gm.GetCell(playerLocationX - 1, playerLocationZ) != lookingAt) {
+                        if (gm.GetCell(playerLocationX - 1, playerLocationZ) != lookingAt)
+                        {
                             UpdateVariablesForLooking(playerLocationX - 1, playerLocationZ);
                         }
 
@@ -89,7 +99,8 @@ public class PlayerManager : MonoBehaviour {
 
                     case Direction.Right:
 
-                        if (gm.GetCell(playerLocationX + 1, playerLocationZ) != lookingAt) {
+                        if (gm.GetCell(playerLocationX + 1, playerLocationZ) != lookingAt)
+                        {
                             UpdateVariablesForLooking(playerLocationX + 1, playerLocationZ);
                         }
 
@@ -97,7 +108,9 @@ public class PlayerManager : MonoBehaviour {
 
                 }
 
-            } catch (System.IndexOutOfRangeException ex) {
+            }
+            catch (System.IndexOutOfRangeException ex)
+            {
                 lookingAt = gm.GetCell(playerLocationX, playerLocationZ);
 
             }
@@ -107,7 +120,8 @@ public class PlayerManager : MonoBehaviour {
         }
     }
 
-    private void UpdateVariablesForLooking(int x, int y) {
+    private void UpdateVariablesForLooking(int x, int y)
+    {
         lastLookedAt = lookingAt;
         lookingAt = gm.GetCell(x, y);
 
@@ -116,34 +130,38 @@ public class PlayerManager : MonoBehaviour {
 
     }
 
-    public void PlaceCurrentObject() {
+    public void PlaceCurrentObject()
+    {
 
         Vector3 posToPlace = lookingAt.transform.position;
         posToPlace.y += 0.5f;  //Hardcoded Value
 
-        if (lookingAt.GetComponent<Cell>().CheckForImprovement()) {
+        if (lookingAt.GetComponent<Cell>().CheckForImprovement())
+        {
             lookingAt.GetComponent<Cell>().GetImprovement().GetComponent<Building>().Interact();
         }
 
 
 
-        if (!lookingAt.GetComponent<Cell>().CheckForImprovement() && !lookingAt.GetComponent<Cell>().isPath) {
+        if (!lookingAt.GetComponent<Cell>().CheckForImprovement() && !lookingAt.GetComponent<Cell>().isPath)
+        {
 
             GameObject curSelected = bm.buildings[bm.currentlySelected];
 
-            if (curSelected.GetComponent<Building>().buildCost <= GameManager.gameManager.currentEnergy) {
+            if (curSelected.GetComponent<Building>().buildCost <= GameManager.gameManager.currentEnergy)
+            {
                 GameObject go = Instantiate(curSelected, posToPlace, Quaternion.identity);
                 lookingAt.GetComponent<Cell>().SetImprovement(go);
                 GameManager.gameManager.buildings.Add(go.GetComponent<Building>());
 
                 GameManager.gameManager.currentEnergy -= curSelected.GetComponent<Building>().buildCost;
             }
-            
-            
+
+
         }
 
-        
+
     }
 
-        
+
 }
