@@ -52,12 +52,17 @@ MonoBehaviour:
   isIdle: 0
   buildingBase: {fileID: 6405709178431213252}
   buildingHead: {fileID: 5144877739638666759}
-  energyCost: -3
+  energyCost: -5
+  activeMat: {fileID: 0}
+  inactiveMat: {fileID: 0}
+  buildCost: 0
   isSingleTarget: 1
   currentTarget: {fileID: 0}
+  plugHead: {fileID: 5569158679929614765}
+  player: {fileID: 0}
   Range: 10
-  fireRate: 1
-  damage: 1
+  fireRate: 10
+  damage: 4
   targeting: 1
 --- !u!135 &47107481123782555
 SphereCollider:
@@ -340,5 +345,10 @@ PrefabInstance:
 --- !u!4 &2298372024101999175 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3529180124788334099, guid: 20fc1f22d781da442b7fd3f18cc3fe11, type: 3}
+  m_PrefabInstance: {fileID: 3395537706412608596}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5569158679929614765 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7086132391367409145, guid: 20fc1f22d781da442b7fd3f18cc3fe11, type: 3}
   m_PrefabInstance: {fileID: 3395537706412608596}
   m_PrefabAsset: {fileID: 0}

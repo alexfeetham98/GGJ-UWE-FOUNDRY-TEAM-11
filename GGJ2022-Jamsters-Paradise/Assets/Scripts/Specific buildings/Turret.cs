@@ -22,6 +22,8 @@ public class Turret : Building, IInteractable
     private Quaternion lookRotation;
     private Vector3 direction;
     private SphereCollider rangeCollider;
+    public GameObject plugHead;
+    public GameObject player;
 
     [SerializeField] private float Range = 1f;
     [SerializeField] private float fireRate = 1f;
@@ -177,5 +179,14 @@ public class Turret : Building, IInteractable
         {
             currentTarget = null;
         }
+    }
+    public override void Interact()
+    {
+        //base.Interact();
+        FindObjectOfType<PlayerManager>().isHolding = plugHead;
+        //player.GetComponent<PlayerManager>().isHolding = plugHead;
+
+
+
     }
 }

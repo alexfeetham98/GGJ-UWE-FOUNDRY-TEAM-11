@@ -14,7 +14,7 @@ public class PlayerManager : MonoBehaviour
 
 
 
-    public bool isHolding;
+    public GameObject isHolding;
 
     public int playerLocationX; //Player's X location on the board
     public int playerLocationZ; // Player's Y location on the board
@@ -44,13 +44,32 @@ public class PlayerManager : MonoBehaviour
         bmCheck = true;
 
         lookingAt = gm.GetCell(0, 0);
-        isHolding = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         UpdateCellLookingAt();
+
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (isHolding != null)
+            {
+                Cable cable = isHolding.GetComponent<Cable>();
+                isHolding = null;
+                //isHolding.transform.position = isHolding.GetComponentInParent<Transform>().position;
+                cable.ResetCable();
+                cable.ResetCable();
+                cable = null;
+            }
+        }
+
+
+        if (isHolding != null)
+        {
+            isHolding.transform.position = player.transform.position + Vector3.up * 0.5f;
+        }
 
     }
 
@@ -138,7 +157,7 @@ public class PlayerManager : MonoBehaviour
 
         if (lookingAt.GetComponent<Cell>().CheckForImprovement())
         {
-            lookingAt.GetComponent<Cell>().GetImprovement().GetComponent<Building>().Interact();
+            lookingAt.GetComponent<Cell>().GetImprovement().GetComponent<Turret>().Interact();
         }
 
 
