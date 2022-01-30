@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -37,7 +38,10 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         gameManager = this;
-        Init();
+        if (gamestate == GAMESTATE.GAME_DAY)
+        {
+            Init();
+        }
     }
 
     // Update is called once per frame
@@ -146,5 +150,15 @@ public class GameManager : MonoBehaviour
     private void GameLost()
     {
         Debug.Log("GAME LOST");
+    }
+
+    public void LoadMainGame()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }
