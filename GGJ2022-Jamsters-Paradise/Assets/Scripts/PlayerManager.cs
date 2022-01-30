@@ -134,7 +134,7 @@ public class PlayerManager : MonoBehaviour {
             if (curSelected.GetComponent<Building>().buildCost <= GameManager.gameManager.currentEnergy) {
                 GameObject go = Instantiate(curSelected, posToPlace, Quaternion.identity);
                 lookingAt.GetComponent<Cell>().SetImprovement(go);
-                GameManager.gameManager.buildings.Add(go.GetComponent<Turret>());
+                GameManager.gameManager.buildings.Add(go.GetComponent<Building>());
 
                 GameManager.gameManager.currentEnergy -= curSelected.GetComponent<Building>().buildCost;
             }
