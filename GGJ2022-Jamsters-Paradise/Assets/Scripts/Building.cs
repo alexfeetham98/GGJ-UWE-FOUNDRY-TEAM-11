@@ -14,6 +14,7 @@ public class Building : MonoBehaviour
     public Material inactiveMat;
 
     private MeshRenderer baseRenderer;
+    public float buildCost;
     // Start is called before the first frame update
    public void Start()
     {

@@ -524,6 +524,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildings:
   - {fileID: 4195993312136203161, guid: 8c2acf1146d270749935fe328eaa62df, type: 3}
+  - {fileID: 3975495315394153107, guid: 438a8f93bcaa70c4bb4d979e2b0871c6, type: 3}
+  - {fileID: 7114356404000388038, guid: 6c93cce861192f749873c21b0d7a34c3, type: 3}
+  currentlySelected: 0
 --- !u!114 &1690991917
 MonoBehaviour:
   m_ObjectHideFlags: 0

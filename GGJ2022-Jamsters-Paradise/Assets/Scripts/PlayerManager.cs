@@ -11,6 +11,8 @@ public class PlayerManager : MonoBehaviour {
     private GameObject player;  //Reference to player
 
 
+
+
     public bool isHolding;
 
     public int playerLocationX; //Player's X location on the board
@@ -25,6 +27,9 @@ public class PlayerManager : MonoBehaviour {
     private GridManager gm;
     private bool gmCheck;
 
+    private BuildingManager bm;
+    private bool bmCheck;
+
     
 
     
@@ -33,6 +38,8 @@ public class PlayerManager : MonoBehaviour {
         gm = (GridManager)FindObjectOfType(typeof(GridManager));
         gmCheck = true;
 
+        bm = (BuildingManager)FindObjectOfType(typeof(BuildingManager));
+        bmCheck = true;
 
         lookingAt = gm.GetCell(0, 0);
         isHolding = false;
@@ -121,8 +128,18 @@ public class PlayerManager : MonoBehaviour {
 
 
         if (!lookingAt.GetComponent<Cell>().CheckForImprovement() && !lookingAt.GetComponent<Cell>().isPath) {
-            GameObject go = Instantiate(BuildingManager.currentlySelected, posToPlace, Quaternion.identity);
-            lookingAt.GetComponent<Cell>().SetImprovement(go);
+
+            GameObject curSelected = bm.buildings[bm.currentlySelected];
+
+            if (curSelected.GetComponent<Building>().buildCost <= GameManager.gameManager.currentEnergy) {
+                GameObject go = Instantiate(curSelected, posToPlace, Quaternion.identity);
+                lookingAt.GetComponent<Cell>().SetImprovement(go);
+                GameManager.gameManager.buildings.Add(go.GetComponent<Turret>());
+
+                GameManager.gameManager.currentEnergy -= curSelected.GetComponent<Building>().buildCost;
+            }
+            
+            
         }
 
         

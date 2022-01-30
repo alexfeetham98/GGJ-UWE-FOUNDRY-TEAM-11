@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     public bool criticalAlert = false;
     public float criticalAlertTimer = 15f;
-    private List<Battery> batteryList = new List<Battery>();
+    public List<Battery> batteryList = new List<Battery>();
     public List<Building> buildings = new List<Building>();
 
     [SerializeField]private Slider energySlider;
