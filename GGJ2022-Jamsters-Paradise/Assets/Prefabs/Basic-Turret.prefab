@@ -78,14 +78,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c1f639f21f56f24687d580d2e26f908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
+  isActive: 1
   buildingBase: {fileID: 4479862566667768480}
   buildingHead: {fileID: 1436613680846245565}
   energyCost: -2
   isSingleTarget: 1
   currentTarget: {fileID: 0}
   Range: 10
-  fireRate: 1
+  fireRate: 10
   damage: 1
   targeting: 1
 --- !u!135 &4195993312136203142
