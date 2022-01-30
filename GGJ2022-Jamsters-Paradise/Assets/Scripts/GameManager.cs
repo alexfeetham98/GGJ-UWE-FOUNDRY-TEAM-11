@@ -97,7 +97,8 @@ public class GameManager : MonoBehaviour
 
         if (criticalAlert)
         {
-            alertTimer.text = criticalAlertTimer.ToString();
+            
+            alertTimer.text = Mathf.FloorToInt(criticalAlertTimer).ToString();
             if(currentEnergy > 0)
             {
                 criticalAlert = false;

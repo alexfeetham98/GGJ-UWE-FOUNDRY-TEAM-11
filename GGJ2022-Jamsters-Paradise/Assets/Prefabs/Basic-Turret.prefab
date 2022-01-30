@@ -82,7 +82,7 @@ MonoBehaviour:
   isIdle: 0
   buildingBase: {fileID: 4479862566667768480}
   buildingHead: {fileID: 1436613680846245565}
-  energyCost: -2
+  energyCost: -10
   activeMat: {fileID: 2100000, guid: 8403057fd58d0e9488ecd9cc0cdf2ba9, type: 2}
   inactiveMat: {fileID: 2100000, guid: 7e78ad467dcc3c443a51e14213877af4, type: 2}
   isSingleTarget: 1
