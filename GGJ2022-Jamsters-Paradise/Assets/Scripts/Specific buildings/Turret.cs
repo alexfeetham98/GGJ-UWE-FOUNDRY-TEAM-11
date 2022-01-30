@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Turret : Building
+public class Turret : Building, IInteractable
 {
     enum TargetingType
     {
@@ -35,6 +35,7 @@ public class Turret : Building
         base.Start();
         rangeCollider = GetComponent<SphereCollider>();
         rangeCollider.radius = Range;
+        Enemy.OnDeath += ClearDeadEnemy;
     }
 
     // Update is called once per frame
@@ -44,6 +45,8 @@ public class Turret : Building
         {
             return;
         }
+
+        isIdle = (currentTarget == null) ? true : false;
         //Actions like pointing turret if it has to point at specific target
         if (isSingleTarget)
         {
@@ -161,6 +164,18 @@ public class Turret : Building
             {
                 currentTarget = null;
             }
+        }
+    }
+
+    public void ClearDeadEnemy(Enemy enemy)
+    {
+        if (targetList.Contains(enemy))
+        {
+            targetList.Remove(enemy);
+        }
+        if (currentTarget == enemy)
+        {
+            currentTarget = null;
         }
     }
 }

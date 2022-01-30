@@ -5,6 +5,7 @@ using UnityEngine;
 public class Building : MonoBehaviour
 {
     public bool isActive = false;
+    public bool isIdle = false;
     public GameObject buildingBase;
     public GameObject buildingHead;
     public float energyCost;
@@ -23,5 +24,10 @@ public class Building : MonoBehaviour
     public void SwitchPower()
     {
         isActive = (isActive = true ? false : true);
+    }
+
+    public virtual void Interact()
+    {
+        SwitchPower();
     }
 }
