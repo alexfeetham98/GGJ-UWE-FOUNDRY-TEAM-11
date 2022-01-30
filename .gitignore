@@ -58,6 +58,18 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+
+*.log
+
+GGJ2022-Jamsters-Paradise/Library/Artifacts/41/
+
+GGJ2022-Jamsters-Paradise/Library/Artifacts/2e/2e3c7523ae8208d717bf43e458552c84
+
+GGJ2022-Jamsters-Paradise/Library/Artifacts/2e/
+
+GGJ2022-Jamsters-Paradise/Library/ShaderCache/
+
+GGJ2022-Jamsters-Paradise/Library/CurrentLayout-default.dwlt
 
 *.log
 

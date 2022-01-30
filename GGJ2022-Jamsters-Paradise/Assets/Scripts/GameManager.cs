@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
         END_SCREEN
     }
     static int BATTERY_ENERGY_VALUE = 50;
-    static float CRITICAL_ALERT_DEFAULT_VALUE = 15f;
+    public float CRITICAL_ALERT_DEFAULT_VALUE = 15f;
 
     public static GameManager gameManager;
 
@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     public float energyFlow;
 
     public bool criticalAlert = false;
-    public float criticalAlertTimer = CRITICAL_ALERT_DEFAULT_VALUE;
+    public float criticalAlertTimer = 15f;
     private List<Battery> batteryList = new List<Battery>();
     public List<Building> buildings = new List<Building>();
 
@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
         energyFlow = 0;
         foreach (var building in buildings)
         {
-            if (building.isActive)
+            if (building.isActive && !building.isIdle)
             {
                 energyFlow += building.energyCost;
             }

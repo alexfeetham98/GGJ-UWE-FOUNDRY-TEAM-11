@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public delegate void EnemyDeath(Enemy enemy);
+    public static event EnemyDeath OnDeath;
+
     public float currentHealth = 100;
     public float maxHealth = 100;
     // Start is called before the first frame update
@@ -29,6 +32,7 @@ public class Enemy : MonoBehaviour
     }
     private void Die()
     {
-
+        OnDeath(this);
+        Destroy(this.gameObject);
     }
 }

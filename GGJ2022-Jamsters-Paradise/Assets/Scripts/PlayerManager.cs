@@ -8,16 +8,19 @@ public class PlayerManager : MonoBehaviour {
 
 
     [SerializeField]
-    private GameObject player;  //Reference to player 
-    [SerializeField]
-    List<GameObject> buildings = new List<GameObject>();
+    private GameObject player;  //Reference to player
+
+    
 
 
     public int playerLocationX; //Player's X location on the board
     public int playerLocationZ; // Player's Y location on the board
+
     public Direction lastInput = Direction.Up; // Player's Last Movement direction
     public GameObject lookingAt; // Cell the player is looking at
-    private GameObject currentlyHolding;
+    public GameObject lastLookedAt;
+    
+    
 
     private GridManager gm;
     private bool gmCheck;
@@ -31,38 +34,57 @@ public class PlayerManager : MonoBehaviour {
         gmCheck = true;
 
 
-        lookingAt = gm.GetCell(1, 1);
-        currentlyHolding = buildings[0];
+        lookingAt = gm.GetCell(0, 0);
     }
 
     // Update is called once per frame
     void Update() {
+        UpdateCellLookingAt();
+        
+    }
 
+    public void UpdateCellLookingAt() {
+        
+        
+        
         if (gmCheck) {
-            playerLocationX = Mathf.FloorToInt(player.transform.position.x);
-            playerLocationZ = Mathf.FloorToInt(player.transform.position.z);
+
+            playerLocationX = Mathf.RoundToInt(player.transform.position.x);
+            playerLocationZ = Mathf.RoundToInt(player.transform.position.z);
 
             try {
 
                 switch (lastInput) {
                     case Direction.Up:
-                        lookingAt = gm.GetCell(playerLocationX, playerLocationZ + 1);
+
+                        if (gm.GetCell(playerLocationX, playerLocationZ + 1) != lookingAt) {
+                            UpdateVariablesForLooking(playerLocationX, playerLocationZ + 1);
+                        }
+
                         break;
 
                     case Direction.Down:
-                        lookingAt = gm.GetCell(playerLocationX, playerLocationZ - 1);
+
+                        if (gm.GetCell(playerLocationX, playerLocationZ - 1) != lookingAt) {
+                            UpdateVariablesForLooking(playerLocationX, playerLocationZ - 1);
+                        }
+
                         break;
 
                     case Direction.Left:
-                        lookingAt = gm.GetCell(playerLocationX - 1, playerLocationZ);
+
+                        if (gm.GetCell(playerLocationX - 1, playerLocationZ) != lookingAt) {
+                            UpdateVariablesForLooking(playerLocationX - 1, playerLocationZ);
+                        }
+
                         break;
 
                     case Direction.Right:
-                        lookingAt = gm.GetCell(playerLocationX + 1, playerLocationZ);
-                        break;
 
-                    default:
-                        lookingAt = gm.GetCell(playerLocationX, playerLocationZ);
+                        if (gm.GetCell(playerLocationX + 1, playerLocationZ) != lookingAt) {
+                            UpdateVariablesForLooking(playerLocationX + 1, playerLocationZ);
+                        }
+
                         break;
 
                 }
@@ -73,9 +95,17 @@ public class PlayerManager : MonoBehaviour {
             }
 
 
-            
 
         }
+    }
+
+    public void UpdateVariablesForLooking(int x, int y) {
+        lastLookedAt = lookingAt;
+        lookingAt = gm.GetCell(x, y);
+
+        gm.UpdateCellColours(lastLookedAt, lookingAt);
+
+
     }
 
     public void PlaceCurrentObject() {
@@ -83,8 +113,12 @@ public class PlayerManager : MonoBehaviour {
         Vector3 posToPlace = lookingAt.transform.position;
         posToPlace.y += 0.5f;  //Hardcoded Value
 
-        GameObject go = Instantiate(currentlyHolding, posToPlace, Quaternion.identity);
-        lookingAt.GetComponent<Cell>().SetImprovement(go);
+        if (!lookingAt.GetComponent<Cell>().CheckForImprovement() && !lookingAt.GetComponent<Cell>().isPath) {
+            GameObject go = Instantiate(BuildingManager.currentlySelected, posToPlace, Quaternion.identity);
+            lookingAt.GetComponent<Cell>().SetImprovement(go);
+        }
+
+        
     }
 
         
