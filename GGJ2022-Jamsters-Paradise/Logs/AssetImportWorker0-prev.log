@@ -1,0 +1,180 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.26f1 (7298b473bc1a) revision 7510196'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19044) 64bit Professional' Language: 'en' Physical Memory: 8109 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.26f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/alexf/Documents/MSc-Commercial-Games-Development/GGJ-UWE-FOUNDRY-TEAM-11/GGJ2022-Jamsters-Paradise
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+51441
+Successfully changed project path to: C:/Users/alexf/Documents/MSc-Commercial-Games-Development/GGJ-UWE-FOUNDRY-TEAM-11/GGJ2022-Jamsters-Paradise
+C:/Users/alexf/Documents/MSc-Commercial-Games-Development/GGJ-UWE-FOUNDRY-TEAM-11/GGJ2022-Jamsters-Paradise
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 440.88 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.26f1 (7298b473bc1a)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/alexf/Documents/MSc-Commercial-Games-Development/GGJ-UWE-FOUNDRY-TEAM-11/GGJ2022-Jamsters-Paradise/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) HD Graphics 520 (ID=0x1916)
+    Vendor:   
+    VRAM:     4054 MB
+    Driver:   24.20.100.6293
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56064
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004364 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 158.90 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.914 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1914ms)
+		BeginReloadAssembly (118ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (2ms)
+		EndReloadAssembly (1603ms)
+			LoadAssemblies (115ms)
+			RebuildTransferFunctionScriptingTraits (1ms)
+			SetupTypeCache (675ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (61ms)
+			SetupLoadedEditorAssemblies (685ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (159ms)
+				BeforeProcessingInitializeOnLoad (33ms)
+				ProcessInitializeOnLoadAttributes (173ms)
+				ProcessInitializeOnLoadMethodAttributes (311ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.017281 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 128.39 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.382 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2384ms)
+		BeginReloadAssembly (327ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (38ms)
+		EndReloadAssembly (1953ms)
+			LoadAssemblies (155ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (598ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (92ms)
+			SetupLoadedEditorAssemblies (846ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (128ms)
+				BeforeProcessingInitializeOnLoad (217ms)
+				ProcessInitializeOnLoadAttributes (455ms)
+				ProcessInitializeOnLoadMethodAttributes (19ms)
+				AfterProcessingInitializeOnLoad (16ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (17ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.15 seconds
+Refreshing native plugins compatible for Editor in 1.17 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2931 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 126.4 MB.
+System memory in use after: 126.5 MB.
+
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 3362.
+Total: 6.673900 ms (FindLiveObjects: 0.356500 ms CreateObjectMapping: 0.313000 ms MarkObjects: 5.805700 ms  DeleteObjects: 0.196700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/Scenes/Cable.unity
+  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Cable.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ecd9e5c3bc94450d108169381ddec20') in 0.030016 seconds 
+  Import took 0.040377 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 31.598093 seconds.
+  path: Assets/Prefabs/Cable.prefab
+  artifactKey: Guid(20fc1f22d781da442b7fd3f18cc3fe11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Cable.prefab using Guid(20fc1f22d781da442b7fd3f18cc3fe11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86f8535f947b93d431af7386f29ff91a') in 0.212232 seconds 
+  Import took 0.221391 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.265873 seconds.
+  path: Assets/Prefabs/Turret-Panda (2).prefab
+  artifactKey: Guid(b5b9a56f6d4935141b57aaab997637d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Turret-Panda (2).prefab using Guid(b5b9a56f6d4935141b57aaab997637d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c81b86dd8e5ff6aabf91ec7aefb6945') in 0.035330 seconds 
+  Import took 0.048305 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 36.445940 seconds.
+  path: Assets/Prefabs/Cable 1.prefab
+  artifactKey: Guid(2d4021e23b1115e41bce6a443dfb054f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Cable 1.prefab using Guid(2d4021e23b1115e41bce6a443dfb054f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ba8857ff63177bea3c7205a2eb8d586') in 0.088699 seconds 
+  Import took 0.102100 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.318636 seconds.
+  path: Assets/Prefabs/Cable.prefab
+  artifactKey: Guid(20fc1f22d781da442b7fd3f18cc3fe11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Cable.prefab using Guid(20fc1f22d781da442b7fd3f18cc3fe11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d73c9c5dfb147a0d0d5ea893d3be4a0') in 0.065120 seconds 
+  Import took 0.078049 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.001326 seconds.
+  path: Assets/Prefabs/Turret-Panda-Cable.prefab
+  artifactKey: Guid(5f54b33e2cf130b4abfa7925b5efd757) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Turret-Panda-Cable.prefab using Guid(5f54b33e2cf130b4abfa7925b5efd757) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b44f2f4d29e2c4a309a1cdb652c61644') in 0.064968 seconds 
+  Import took 0.088596 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

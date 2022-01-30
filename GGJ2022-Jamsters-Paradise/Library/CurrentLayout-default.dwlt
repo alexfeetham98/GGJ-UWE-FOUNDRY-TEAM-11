@@ -325,7 +325,7 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Scenes
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: D:\Unity Projects\GGJ-UWE-FOUNDRY-TEAM-11\GGJ2022-Jamsters-Paradise
+  m_LastProjectPath: C:\Users\alexf\Documents\MSc-Commercial-Games-Development\GGJ-UWE-FOUNDRY-TEAM-11\GGJ2022-Jamsters-Paradise
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
@@ -448,7 +448,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 459
   m_GlobalObjectId: 
   m_LockTracker:
     m_IsLocked: 0
@@ -574,9 +574,9 @@ MonoBehaviour:
       m_Size: {x: 0, y: 0}
     yGrid:
       m_Fade:
-        m_Target: 1
+        m_Target: 0
         speed: 2
-        m_Value: 1
+        m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
@@ -587,12 +587,12 @@ MonoBehaviour:
         m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0}
-    m_ShowGrid: 1
+      m_Size: {x: 1, y: 1}
+    m_ShowGrid: 0
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.04828028, y: 0.009007489, z: -0.0003607413, w: 0.99886346}
+    m_Target: {x: -0.008391481, y: 0.55991495, z: 0.005781845, w: 0.8285504}
     speed: 2
     m_Value: {x: -0.04828028, y: -0.00900749, z: 0.0003607413, w: -0.9988635}
   m_Size:
@@ -616,7 +616,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: 0, y: 0, z: 0, w: 0}
+  m_LastSceneViewRotation: {x: -0.10279388, y: 0.80307525, z: -0.14514664, w: -0.568727}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
