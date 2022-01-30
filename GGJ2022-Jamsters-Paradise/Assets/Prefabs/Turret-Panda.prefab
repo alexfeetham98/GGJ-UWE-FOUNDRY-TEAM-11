@@ -134,6 +134,7 @@ MonoBehaviour:
   buildingBase: {fileID: 8028002112375045070}
   buildingHead: {fileID: 8136545370123731725}
   energyCost: -3
+  buildCost: 80
   isSingleTarget: 1
   currentTarget: {fileID: 0}
   Range: 10

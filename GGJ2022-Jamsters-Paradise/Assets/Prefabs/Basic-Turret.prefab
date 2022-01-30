@@ -79,9 +79,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 1
+  isIdle: 0
   buildingBase: {fileID: 4479862566667768480}
   buildingHead: {fileID: 1436613680846245565}
   energyCost: -2
+  buildCost: 30
   isSingleTarget: 1
   currentTarget: {fileID: 0}
   Range: 10

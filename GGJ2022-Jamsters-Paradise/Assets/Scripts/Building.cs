@@ -9,6 +9,7 @@ public class Building : MonoBehaviour
     public GameObject buildingBase;
     public GameObject buildingHead;
     public float energyCost;
+    public float buildCost;
     // Start is called before the first frame update
    public void Start()
     {
