@@ -134,6 +134,8 @@ MonoBehaviour:
   buildingBase: {fileID: 8028002112375045070}
   buildingHead: {fileID: 8136545370123731725}
   energyCost: -3
+  activeMat: {fileID: 2100000, guid: 8403057fd58d0e9488ecd9cc0cdf2ba9, type: 2}
+  inactiveMat: {fileID: 2100000, guid: 7e78ad467dcc3c443a51e14213877af4, type: 2}
   isSingleTarget: 1
   currentTarget: {fileID: 0}
   Range: 10
