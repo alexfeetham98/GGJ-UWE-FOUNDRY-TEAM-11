@@ -35,8 +35,9 @@ public class Cable : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        //transform.position = GetMouseWorldPos() + mOffset;
-        transform.position = new Vector3(Input.mousePosition.x, 0.4f, Input.mousePosition.y);
+        //transform.position = new Vector3(Input.mousePosition.x, 0.4f, Input.mousePosition.y);
+        transform.position = GetMouseWorldPos() + mOffset;
+        
     }
 
     private void ResetCable()
