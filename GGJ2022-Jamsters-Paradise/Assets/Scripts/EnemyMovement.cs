@@ -14,9 +14,12 @@ public class EnemyMovement : MonoBehaviour {
     public List<Vector2> path;
     public float speedModifier = 3f;
 
-    public void Setup() {
+    public void Setup(List<Vector2> path) {
         gm = (GridManager)FindObjectOfType(typeof(GridManager));
         gmCheck = true;
+
+        this.path = path;
+
         positionInPath = 0;
 
         currentCell = gm.GetCell((int)path[0].x, (int)path[0].y);

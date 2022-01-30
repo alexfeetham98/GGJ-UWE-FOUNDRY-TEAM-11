@@ -10,9 +10,12 @@ public class GridManager : MonoBehaviour {
     [SerializeField]
     private Transform cellHolder;
 
-    [SerializeField]
-    private GameObject enemy;
 
+    [SerializeField]
+    private GameObject battery;
+
+    [SerializeField]
+    private GameObject enemySpawner;
 
     public GameObject[,] grid;
 
@@ -66,12 +69,27 @@ public class GridManager : MonoBehaviour {
             }
         }
 
+        // Spawning the batteries at the end of the path
+        GameObject go_battery = Instantiate(battery, new Vector3(path1[path1.Count - 1].x, 1f, path1[path1.Count - 1].y), Quaternion.identity);
+        go_battery = Instantiate(battery, new Vector3(path2[path2.Count - 1].x, 1f, path2[path2.Count - 1].y), Quaternion.identity);
+
+        // Setting the enemy spawners
+        GameObject go_EnemySpawner = Instantiate(enemySpawner, new Vector3(path1[0].x, 1f, path1[0].y), Quaternion.identity);
+        go_EnemySpawner.GetComponent<EnemySpawner>().Setup(path1);
+
+        go_EnemySpawner = Instantiate(enemySpawner, new Vector3(path2[0].x, 1f, path2[0].y), Quaternion.identity);
+        go_EnemySpawner.GetComponent<EnemySpawner>().Setup(path2);
+
+
+
+        /*
+
         // SPAWNS enemy at start of game - likely to change
 
         GameObject go_Enemy = Instantiate(enemy, new Vector3(path2[0].x, 1f, path2[0].y), Quaternion.identity);
         go_Enemy.GetComponent<EnemyMovement>().path = path2;
         go_Enemy.GetComponent<EnemyMovement>().Setup();
-
+        */
     }
 
     public void UpdateCellColours(GameObject previous, GameObject current) {
