@@ -294,9 +294,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 1
+  isIdle: 0
   buildingBase: {fileID: 0}
   buildingHead: {fileID: 0}
   energyCost: 15
+  activeMat: {fileID: 0}
+  inactiveMat: {fileID: 0}
+  buildCost: 99
 --- !u!65 &5487556343123984219
 BoxCollider:
   m_ObjectHideFlags: 0
